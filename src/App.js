@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+const fruits = [
+  { name: "apple", color: "red", count: 30 },
+  { name: "banana", color: "yellow", count: 15 },
+  { name: "orange", color: "orange", count: 13 },
+  { name: "grape", color: "purple", count: 20 },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {fruits.map(function (fruit, key) {
+        return (
+          <MyComp
+            key={key}
+            
+            color={fruit.color}
+            size={fruit.count}
+          >{fruit.name}</MyComp>
+        );
+      })}
     </div>
   );
+}
+function MyComp({  color, size, children }) {
+  return <div><p style={{ color: color, fontSize: size }}>{children}</p><hr/></div>;
 }
 
 export default App;
