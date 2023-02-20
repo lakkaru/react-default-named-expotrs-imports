@@ -13,12 +13,9 @@ function App() {
     <div className="App">
       {fruits.map(function (fruit, key) {
         return (
-          <MyComp
-            key={key}
-            
-            color={fruit.color}
-            size={fruit.count}
-          >{fruit.name}</MyComp>
+          <FruitTest key={key} >
+            <p style={{ color: fruit.color, fontSize: fruit.count }}>{fruit.name}</p>
+          </FruitTest>
         );
       })}
     </div>
@@ -28,4 +25,10 @@ function MyComp({  color, size, children }) {
   return <div><p style={{ color: color, fontSize: size }}>{children}</p><hr/></div>;
 }
 
-export default App;
+
+ function FruitTest({color, size, children}) {
+  return <div style={{backgroundColor:'gray'}}>
+   {children}
+  </div>;
+ }
+ export default App;
