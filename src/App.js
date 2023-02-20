@@ -26,7 +26,7 @@ function MyComp({  color, size, children }) {
 }
 
 
- function FruitTest({color, size, children}) {
+ function FruitTest({children}) {
   return <div style={{backgroundColor:'gray'}}>
    {children}
   </div>;
