@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       {fruits.map(function (fruit, key) {
         return (
-          <FruitTest key={key} >
-            <p style={{ color: fruit.color, fontSize: fruit.count }}>{fruit.name}</p>
+          <FruitTest key={key} customCopm={<p style={{ color: fruit.color, fontSize: fruit.count }}>{fruit.name}</p>}>
+            
           </FruitTest>
         );
       })}
@@ -26,9 +26,9 @@ function MyComp({  color, size, children }) {
 }
 
 
- function FruitTest({children}) {
+ function FruitTest({customCopm}) {
   return <div style={{backgroundColor:'gray'}}>
-   {children}
+   {customCopm}
   </div>;
  }
  export default App;
